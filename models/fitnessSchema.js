@@ -32,10 +32,6 @@ const fitnessSchema = new Schema({
         type: Number,
         required: false,
     },
-    Date: {
-        type: Date,
-        default: Date.now
-    }
     /* name, type, weight, sets, reps, and duration of exercise.
     If the exercise is a cardio exercise, I should be able to track my distance traveled */
 });
