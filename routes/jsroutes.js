@@ -26,16 +26,38 @@ router.get('./public/workout') */
 
 router.get("/api/workouts", (req, res) => {
     fitnessSchema.find({}).then(workoutInfo => {
-        console.log(workout)
-        res.json(workout)
+        console.log(workoutInfo)
+        res.json(workoutInfo)
     })
 });
 
 router.get("/api/workouts/range", (req, res) => {
-    fitnessSchema.find({}).limit(10).then(workout => {
-        res.json(workout)
+    fitnessSchema.find({}).limit(10).then(workoutInfo => {
+        res.json(workoutInfo)
     })
     .catch(err => {
         res.json(err)
     })
 });
+
+router.post("/api/workouts", (req, res) => {
+    fitnessSchema.create({})
+    .then(workoutInfo => {
+        res.json(workoutInfo);
+    })
+    .catch(err => {
+        res.json(err);
+    })
+})
+
+router.put("/api/workouts/:id", (req, res) => {
+    fitnessSchema.findByIdandUpdate(req.params.id, {$push:{exercise:req.body}},{new:true})
+    .then(workoutInfo => {
+        res.json(workoutInfo)
+    })
+    .catch(err => {
+        res.json(err);
+    })
+})
+
+module.exports = router;
