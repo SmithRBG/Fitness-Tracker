@@ -50,8 +50,8 @@ router.post("/api/workouts", (req, res) => {
     })
 })
 
-router.put("/api/workouts/:id", (req, res) => {
-    fitnessSchema.findByIdandUpdate(req.params.id, {$push:{exercise:req.body}},{new:true})
+router.put("/api/workouts/:id", ({body,params}, res) => {
+    fitnessSchema.findByIdandUpdate(params.id, {$push:{exercise:body}},{new:true, runValidators:true})
     .then(workoutInfo => {
         res.json(workoutInfo)
     })
