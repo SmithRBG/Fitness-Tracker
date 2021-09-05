@@ -12,3 +12,7 @@ A consumer will reach their fitness goals more quickly when they track their wor
 ## Dependencies
 
 This application uses MongoDB and Mongo Atlas as well as Heroku for deployment. 
+
+## Deployment on Heroku
+
+[Fitness Tracker](https://pacific-peak-57462.herokuapp.com/)
