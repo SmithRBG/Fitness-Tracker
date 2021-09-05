@@ -36,6 +36,6 @@ const fitnessSchema = new Schema({
     If the exercise is a cardio exercise, I should be able to track my distance traveled */
 });
 
-const Tracker = mongoose.model("tracker", fitnessSchema);
+const Tracker = mongoose.model("Tracker", fitnessSchema);
 
 module.exports = Tracker;
