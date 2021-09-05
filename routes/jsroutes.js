@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const fitnessSchema = require('./models/fitnessSchema.js');
+const fitnessSchema = require('../models/fitnessSchema.js');
 
 /* router.post('/api/workout', (req, res) => {
     fitnessSchema.create (body)
