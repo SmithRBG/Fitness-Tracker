@@ -25,14 +25,22 @@ router.get('./public/workout') */
 
 
 router.get("/api/workouts", (req, res) => {
-    fitnessSchema.find({}).then(workoutInfo => {
+    fitnessSchema.aggregate([{
+        $addFields:{
+            totalDuration: {$sum:"$exercises.duration"}
+        }
+    }]).then(workoutInfo => {
         console.log(workoutInfo)
         res.json(workoutInfo)
     })
 });
 
 router.get("/api/workouts/range", (req, res) => {
-    fitnessSchema.find({}).limit(10).then(workoutInfo => {
+    fitnessSchema.aggregate([{
+        $addFields:{
+            totalDuration: {$sum:"$exercises.duration"}
+        }
+    }]).limit(10).then(workoutInfo => {
         res.json(workoutInfo)
     })
     .catch(err => {
@@ -51,7 +59,7 @@ router.post("/api/workouts", (req, res) => {
 })
 
 router.put("/api/workouts/:id", ({body,params}, res) => {
-    fitnessSchema.findByIdandUpdate(params.id, {$push:{exercise:body}},{new:true, runValidators:true})
+    fitnessSchema.updateOne({_id:params.id}, {$push:{exercises:body}})
     .then(workoutInfo => {
         res.json(workoutInfo)
     })

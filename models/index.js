@@ -1,3 +1,3 @@
 module.exports ={
-    Tracker: require("./fitnessSchema")
+    Workout: require("./fitnessSchema")
 }

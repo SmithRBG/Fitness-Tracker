@@ -11,7 +11,7 @@ app.use(express.json());
 
 app.use(express.static("public"));
 
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/FitnessTracker", {
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workout", {
   useNewUrlParser: true,
   useUnifiedTopology: true,
   useCreateIndex: true,
@@ -21,7 +21,7 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/FitnessTracker"
 // routes
 app.use(require("./routes/htmlroutes"));
 app.use(require("./routes/jsroutes"));
-app.use(require("./models/fitnessSchema"));
+
 
 app.listen(PORT, () => {
   console.log(`App running on port ${PORT}!`);
