@@ -17,5 +17,6 @@ This application uses MongoDB and Mongo Atlas as well as Heroku for deployment.
 
 [Fitness Tracker](https://pacific-peak-57462.herokuapp.com/)
 
-![localhost_3000_(Moto G4)](https://user-images.githubusercontent.com/81999910/132142807-a739a21b-1055-48cb-a960-d3d270424b48.png)
+![localhost_3000_(Moto G4)](![dash1](https://user-images.githubusercontent.com/81999910/132996077-fd948f29-dcc9-4d65-9d78-27d410221bdc.png)
+)
 
